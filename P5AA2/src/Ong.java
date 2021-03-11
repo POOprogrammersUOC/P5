@@ -1,6 +1,7 @@
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Ong {
@@ -218,18 +219,22 @@ public class Ong {
 			Leer.nextLine();
 			System.out.println("Acciones: ");
 			String Acciones = Leer.nextLine();
-			System.out.println("Indicar Nº de personas del proyecto: ");
-			int Personal = Leer.nextInt();
-			Leer.nextLine();																						// Estamos obligados a ponerla para que no interprete un valor
-			System.out.println("Indicar Nº de personal voluntario: ");
-			int VoluntariosAsignados = Leer.nextInt();
-			Leer.nextLine();
+			try {
+				
+				System.out.println("Indicar Nº de personas del proyecto: ");
+				int Personal = Leer.nextInt();
+				Leer.nextLine();																						// Estamos obligados a ponerla para que no interprete un valor
+				System.out.println("Indicar Nº de personal voluntario: ");
+				int VoluntariosAsignados = Leer.nextInt();
+				Leer.nextLine();
 
 			Proyectos proyecto = new Proyectos(Pais, Localizacion, LineaDeAccion, SublineaDeAccion, fInicio, fFinal,	//finalmente creamos el objeto
 					SocioLocal, Financiador, Financiacion, Acciones, Personal, VoluntariosAsignados);
 			NuevaListaProyectos.add(proyecto);																			//Añadimos los valores al ArrayList
 
-			
+			}catch (InputMismatchException e) {
+				System.out.println("El valor introducido no es númerico");
+			}	
 		} catch (DateTimeParseException e) {																			//controlamos la excepción personalizada
 			System.out.println(
 					"La fecha introducida no es correcta o no se corresponde con el formato indicado [YYYY-MM-DD]");
