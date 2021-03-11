@@ -37,7 +37,11 @@ public class Main {
 		}
 	public static void subMenuAdministrador() {
 		
+		Ong ong =new Ong();
+		
 		String menu;
+		do {
+			
 		System.out.println("*****************************************");
 		System.out.println("     Accediendo como Administrador");
 		System.out.println("*****************************************");
@@ -74,24 +78,28 @@ public class Main {
 			
 			break;
 		case "7":
-			
+			ong.AddProyectos();
 			break;
 		case "8":
-			
+			ong.EliminarProyecto();
 			break;
 		case "9":
-			
+			ong.ImprimirProyectos();
 			break;
 		case "10":
 			main(null);
 			break;
 		}
-		
+		}while(menu!="10");
 	}
 	
 	public static void subMenuUsuario() {
 		
+		Ong ong = new Ong();
+		
 		String menu;
+		do {
+				
 		System.out.println("*****************************************");
 		System.out.println("     Accediendo como Usuario");
 		System.out.println("*****************************************");
@@ -111,13 +119,14 @@ public class Main {
 			
 			break;
 		case "3":
-			
+			ong.ImprimirProyectos();
 			break;
 		case "4":
 			main(null);
 			break;
 		
 		}
+		}while(menu!="4");
 	}
 }
 
