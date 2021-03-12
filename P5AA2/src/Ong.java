@@ -179,12 +179,15 @@ public class Ong {
 	 */
 
 	public void AddProyectos() {
-		
-		ArrayList<Proyectos> NuevaListaProyectos = this.getListaProyectos(); //Creamos un arrayList de proyectos para que recoja los proyectos con la NuevaListaProyectos
 
-		try {																						// Aplicamos el try catch porque parseamos las fechas
+		ArrayList<Proyectos> NuevaListaProyectos = this.getListaProyectos(); // Creamos un arrayList de proyectos para
+																				// que recoja los proyectos con la
+																				// NuevaListaProyectos
 
-			System.out.println("Introduzca el Pais: ");												// Pedimos los datos de todos los atributos de la clase proyectos
+		try { // Aplicamos el try catch porque parseamos las fechas, doubles y enteros
+
+			System.out.println("Introduzca el Pais: "); // Pedimos los datos de todos los atributos de la clase
+														// proyectos
 			String Pais = Leer.nextLine();
 			System.out.println("Introduzca la Localización: ");
 			String Localizacion = Leer.nextLine();
@@ -196,11 +199,12 @@ public class Ong {
 			String FechaInicio = Leer.nextLine();
 			System.out.println("Introduzca la fecha final del proyecto con el formato [YYYY-MM-DD]: ");
 			String FechaFinal = Leer.nextLine();
-			LocalDate fInicio = LocalDate.parse(FechaInicio);														//parseamos la fecha
+			LocalDate fInicio = LocalDate.parse(FechaInicio); // parseamos la fecha
 			LocalDate fFinal = LocalDate.parse(FechaFinal);
 
-			while (fFinal.isBefore(fInicio)) {																		// Mientras la fecha final sea antes que la de inicio se preguntara de nuevo
-				System.out.println(																					//Nunca podrá ser 2021-03-15 de inicio y la fecha final 2021-02-15
+			while (fFinal.isBefore(fInicio)) { // Mientras la fecha final sea antes que la de inicio se preguntara de
+												// nuevo
+				System.out.println( // Nunca podrá ser 2021-03-15 de inicio y la fecha final 2021-02-15
 						"La fecha no se valida o no se ha introducido correctamente, use el método [YYYY-MM-DD] ");
 				System.out.println("Introduzca la fecha de inicio del proyecto: ");
 				FechaInicio = Leer.nextLine();
@@ -219,26 +223,27 @@ public class Ong {
 			Leer.nextLine();
 			System.out.println("Acciones: ");
 			String Acciones = Leer.nextLine();
-			try {
-				
-				System.out.println("Indicar Nº de personas del proyecto: ");
-				int Personal = Leer.nextInt();
-				Leer.nextLine();																						// Estamos obligados a ponerla para que no interprete un valor
-				System.out.println("Indicar Nº de personal voluntario: ");
-				int VoluntariosAsignados = Leer.nextInt();
-				Leer.nextLine();
+			System.out.println("Indicar Nº de personas del proyecto: ");
+			int Personal = Leer.nextInt();
+			Leer.nextLine(); // Estamos obligados a ponerla para que no interprete un valor
+			System.out.println("Indicar Nº de personal voluntario: ");
+			int VoluntariosAsignados = Leer.nextInt();
+			Leer.nextLine();
 
-			Proyectos proyecto = new Proyectos(Pais, Localizacion, LineaDeAccion, SublineaDeAccion, fInicio, fFinal,	//finalmente creamos el objeto
+			Proyectos proyecto = new Proyectos(Pais, Localizacion, LineaDeAccion, SublineaDeAccion, fInicio, fFinal, // finalmente
+																														// creamos
+																														// el
+																														// objeto
 					SocioLocal, Financiador, Financiacion, Acciones, Personal, VoluntariosAsignados);
-			NuevaListaProyectos.add(proyecto);																			//Añadimos los valores al ArrayList
+			NuevaListaProyectos.add(proyecto); // Añadimos los valores al ArrayList
 
-			}catch (InputMismatchException e) {
-				System.out.println("El valor introducido no es númerico");
-			}	
-		} catch (DateTimeParseException e) {																			//controlamos la excepción personalizada
+		} catch (DateTimeParseException e) { // controlamos la excepción personalizada para la fecha
 			System.out.println(
 					"La fecha introducida no es correcta o no se corresponde con el formato indicado [YYYY-MM-DD]");
 
+		} catch (InputMismatchException e) { // controlamos la excepción personalizada para la introducción de string en variables enteras o double
+			System.out.println("El valor introducido no es númerico.\n");
+			//AddProyectos();
 		}
 
 	}
@@ -253,15 +258,17 @@ public class Ong {
 
 	public void ImprimirProyectos() {
 
-		ArrayList<Proyectos> NuevaListaProyectos = this.getListaProyectos();									//Creamos un arrayList de proyectos para poder recorrer la lista
+		ArrayList<Proyectos> NuevaListaProyectos = this.getListaProyectos(); // Creamos un arrayList de proyectos para
+																				// poder recorrer la lista
 
-		if (NuevaListaProyectos.isEmpty()) {																	// Sí no hay proyectos en la ArrayList, se informa
-			
-			System.out.println("No hay proyectos creados");
+		if (NuevaListaProyectos.isEmpty()) { // Sí no hay proyectos en la ArrayList, se informa
+
+			System.out.println("No hay proyectos creados\n");
 
 		} else {
 
-			for (Proyectos proyectos : NuevaListaProyectos) {													// recorremos la lista con un forEach y mostramos el contenido
+			for (Proyectos proyectos : NuevaListaProyectos) { // recorremos la lista con un forEach y mostramos el
+																// contenido
 				System.out.println("***************************************************");
 				System.out.println("              LISTADO DE PROYECTOS");
 				System.out.println("***************************************************");
@@ -283,28 +290,29 @@ public class Ong {
 			}
 		}
 	}
-	
+
 	public void EliminarProyecto() {
-		
+
 		ArrayList<Proyectos> EliminarListaProyectos = this.getListaProyectos();
-		
-		if(EliminarListaProyectos.isEmpty()) {
+
+		if (EliminarListaProyectos.isEmpty()) {
 			System.out.println("No hay lista de proyectos a eliminar\n");
-		}else {
-			
+		} else {
+
 			for (int i = 0; i < EliminarListaProyectos.size(); i++) {
-				
-				System.out.println("Código del proyecto: " +  EliminarListaProyectos.get(i).getNumProyecto());
+
+				System.out.println("Código del proyecto: " + EliminarListaProyectos.get(i).getNumProyecto());
 			}
 			try {
-			System.out.println("¿Que proyecto quiere eliminar? Indique el número: ");
-			int eliminar = Leer.nextInt();
-			Leer.nextLine();
-			EliminarListaProyectos.remove(eliminar-1);	//Hay que ponerle un try catch IndexOutOfBoundsException fuera de indice
+				System.out.println("¿Que proyecto quiere eliminar? Indique el número: ");
+				int eliminar = Leer.nextInt();
+				Leer.nextLine();
+				EliminarListaProyectos.remove(eliminar - 1); // Hay que ponerle un try catch IndexOutOfBoundsException
+																// fuera de indice
 			} catch (Exception e) {
 				System.out.println("El valor introducido no se encuentra en la lista\n");
 			}
 		}
-		
+
 	}
 }
