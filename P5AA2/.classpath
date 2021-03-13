@@ -6,5 +6,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/SPB_Data/git/P5AA2/P5AA2/src/Librerias/jaxb-api-2.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
