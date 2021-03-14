@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Proyectos {
@@ -6,8 +7,8 @@ public class Proyectos {
 	private String Localizacion;
 	private String lineaDeAccion;
 	private String SublineaDeAccion;
-	private Date FechaInicio;
-	private Date FechaFinal;
+	private LocalDate FechaInicio;
+	private LocalDate FechaFinal;
 	private String SocioLocal;
 	private String Financiador;
 	private Double Financiacion;
@@ -15,6 +16,7 @@ public class Proyectos {
 	private String Acciones;
 	private int Personal;
 	private int VoluntariosAsignados;
+	private static int contador=0;
 	
 	/**
 	 * @param pais Pais donde se realiza el proyecto
@@ -30,11 +32,13 @@ public class Proyectos {
 	 * @param acciones Acciones para el proyecto
 	 * @param personal Personal para el proyecto
 	 * @param voluntariosAsignados Voluntarios para el proyecto
+	 * @param contador inicia número de proyecto a 0 para incrementar cuando se agrega
 	 */
 	
-	public Proyectos(String pais, String localizacion, String lineaDeAccion, String sublineaDeAccion, Date fechaInicio,
-			Date fechaFinal, String socioLocal, String financiador, Double financiacion, int numProyecto,
+	public Proyectos(String pais, String localizacion, String lineaDeAccion, String sublineaDeAccion, LocalDate fechaInicio,
+			LocalDate fechaFinal, String socioLocal, String financiador, Double financiacion,
 			String acciones, int personal, int voluntariosAsignados) {
+		
 		Pais = pais;
 		Localizacion = localizacion;
 		this.lineaDeAccion = lineaDeAccion;
@@ -44,7 +48,7 @@ public class Proyectos {
 		SocioLocal = socioLocal;
 		Financiador = financiador;
 		Financiacion = financiacion;
-		NumProyecto = numProyecto;
+		NumProyecto = ++contador;
 		Acciones = acciones;
 		Personal = personal;
 		VoluntariosAsignados = voluntariosAsignados;
@@ -100,25 +104,25 @@ public class Proyectos {
 	/**
 	 * @return Devuelve fechaInicio
 	 */
-	public Date getFechaInicio() {
+	public LocalDate getFechaInicio() {
 		return FechaInicio;
 	}
 	/**
 	 * @param fechaInicio Establece la fechaInicio
 	 */
-	public void setFechaInicio(Date fechaInicio) {
+	public void setFechaInicio(LocalDate fechaInicio) {
 		FechaInicio = fechaInicio;
 	}
 	/**
 	 * @return Devuelve fechaFinal
 	 */
-	public Date getFechaFinal() {
+	public LocalDate getFechaFinal() {
 		return FechaFinal;
 	}
 	/**
 	 * @param fechaFinal Establece la fechaFinal
 	 */
-	public void setFechaFinal(Date fechaFinal) {
+	public void setFechaFinal(LocalDate fechaFinal) {
 		FechaFinal = fechaFinal;
 	}
 	/**
