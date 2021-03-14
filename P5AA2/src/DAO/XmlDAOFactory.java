@@ -17,4 +17,6 @@ public class XmlDAOFactory extends DAOFactory {
 	public XmlProyectosDAO getProyectosDAO() throws JAXBException{
 		return new XmlProyectosDAO();
 	}
+	
+
 }

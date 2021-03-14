@@ -25,9 +25,9 @@ public abstract class DAOFactory {
 		
 		switch (SelectFactory) {
 		
-		case XML:
+		case 1:
 			return new XmlDAOFactory(); //si la función recibe un 1 llamará a la función para crear el fichero XML
-		//case SQL:
+		//case 2:
 		//	return new SqlDAOFaactory(); //si la función recibe un 2 llamará a la función para crear el fichero SQL
 		default:
 			return null;

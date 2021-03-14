@@ -1,7 +1,28 @@
 package Clases;
 
 import java.time.LocalDate;
+
 import java.util.Date;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
+/**
+ * 
+ * Etiquetas XML
+ * @XmlRootElement indica la raiz del xml
+ * @XmlAccessorType(XmlAccessType.PUBLIC_MEMBER) Indica que tiene acceso público
+ * @XmlType(propOrder = {}) indica el orden para mostrar las etiquetas
+ * @version 1.1
+ * 
+ */
+
+@XmlRootElement(name="Proyectos")
+@XmlAccessorType(XmlAccessType.PUBLIC_MEMBER)
+@XmlType(propOrder = {"NumeroProyecto", "Pais", "Localizacion", "lineaDeAccion", "SublineaDeAccion", "FechaInicio", "FechaFinal", "SocioLocal", "Financiador", "Financiacion", "Acciones", "Personal", "VoluntariosAsignados"})
 
 public class Proyectos {
 
@@ -58,6 +79,7 @@ public class Proyectos {
 	/**
 	 * @return Devuelve el pais
 	 */
+	@XmlElement(name = "Pais")
 	public String getPais() {
 		return Pais;
 	}
@@ -70,6 +92,7 @@ public class Proyectos {
 	/**
 	 * @return Devuelve la localizacion
 	 */
+	@XmlElement(name = "Localizacion")
 	public String getLocalizacion() {
 		return Localizacion;
 	}
@@ -82,6 +105,7 @@ public class Proyectos {
 	/**
 	 * @return Devuelve la lineaDeAccion
 	 */
+	@XmlElement(name = "LineaDeAccion")
 	public String getLineaDeAccion() {
 		return lineaDeAccion;
 	}
@@ -94,6 +118,7 @@ public class Proyectos {
 	/**
 	 * @return Devuelve la sublineaDeAccion
 	 */
+	@XmlElement(name = "SubLineaDeAccion")
 	public String getSublineaDeAccion() {
 		return SublineaDeAccion;
 	}
@@ -106,6 +131,7 @@ public class Proyectos {
 	/**
 	 * @return Devuelve fechaInicio
 	 */
+	@XmlElement(name = "FechaInicio")
 	public LocalDate getFechaInicio() {
 		return FechaInicio;
 	}
@@ -118,6 +144,7 @@ public class Proyectos {
 	/**
 	 * @return Devuelve fechaFinal
 	 */
+	@XmlElement(name = "FechaFinal")
 	public LocalDate getFechaFinal() {
 		return FechaFinal;
 	}
@@ -130,6 +157,7 @@ public class Proyectos {
 	/**
 	 * @return Devuelve socioLocal
 	 */
+	@XmlElement(name = "SocioLocal")
 	public String getSocioLocal() {
 		return SocioLocal;
 	}
@@ -142,6 +170,7 @@ public class Proyectos {
 	/**
 	 * @return Devuelve el financiador
 	 */
+	@XmlElement(name = "Financiador")
 	public String getFinanciador() {
 		return Financiador;
 	}
@@ -154,6 +183,7 @@ public class Proyectos {
 	/**
 	 * @return Devuelve la financiacion
 	 */
+	@XmlElement(name = "Financiacion")
 	public Double getFinanciacion() {
 		return Financiacion;
 	}
@@ -166,6 +196,7 @@ public class Proyectos {
 	/**
 	 * @return Devuelve el numProyecto
 	 */
+	@XmlElement(name = "NumeroProyecto")
 	public int getNumProyecto() {
 		return NumProyecto;
 	}
@@ -178,6 +209,7 @@ public class Proyectos {
 	/**
 	 * @return Devuelve las acciones
 	 */
+	@XmlElement(name = "Acciones")
 	public String getAcciones() {
 		return Acciones;
 	}
@@ -190,6 +222,7 @@ public class Proyectos {
 	/**
 	 * @return Devuelve el personal
 	 */
+	@XmlElement(name = "Personal")
 	public int getPersonal() {
 		return Personal;
 	}
@@ -202,6 +235,7 @@ public class Proyectos {
 	/**
 	 * @return Devuelve los voluntariosAsignados
 	 */
+	@XmlElement(name = "VoluntariosAsignados")
 	public int getVoluntariosAsignados() {
 		return VoluntariosAsignados;
 	}
