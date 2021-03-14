@@ -65,6 +65,7 @@ public class Main {
 			switch (menu) {
 
 			case "1":
+				ong.AgregarEmpleado();
 
 				break;
 			case "2":

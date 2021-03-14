@@ -6,6 +6,8 @@ import java.util.InputMismatchException;
 
 import java.util.Scanner;
 
+import hola.Empleados;
+
 public class Ong {
 
 	private String Nombre;
@@ -389,6 +391,38 @@ public class Ong {
 			}
 		}
 
+	}
+	
+public void AgregarEmpleado() {
+		
+		ArrayList<Empleados> NuevaListaEmpleados = this.getListaEmpleados();
+		
+		
+		System.out.println("Introduce nombre");
+		
+		String Nombre = leer.nextLine();
+		
+		System.out.println("Introduce apellido");
+		
+		String Apellidos = leer.nextLine();
+		
+		System.out.println("Introduce direccion");
+		
+		String Direccion = leer.nextLine();
+		
+		System.out.println("Introduce telefono");
+		
+		String Telefono = leer.nextLine();
+		
+		System.out.println("Introduce dni");
+		
+		String DNI = leer.nextLine();
+		
+		
+		Empleados empleado = new Empleados(Nombre, Apellidos, Direccion, Telefono, DNI);
+		NuevaListaEmpleados.add(empleado);
+		
+		
 	}
 
 }
