@@ -6,8 +6,6 @@ import java.util.InputMismatchException;
 
 import java.util.Scanner;
 
-import hola.Empleados;
-
 public class Ong {
 
 	private String Nombre;
