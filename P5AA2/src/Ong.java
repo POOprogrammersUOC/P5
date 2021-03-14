@@ -238,7 +238,7 @@ public class Ong {
 
 	public void EliminarSocio() {
 
-		ArrayList<Socios> NuevaListaSocios = this.getListaSocios();
+		ArrayList<Socios> NuevaListaSocios = this.getListaSocios(); PRUEBA!!!
 
 	}
 
