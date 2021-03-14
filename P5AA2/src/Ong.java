@@ -392,37 +392,77 @@ public class Ong {
 		}
 
 	}
-	
-public void AgregarEmpleado() {
-		
+
+	public void AgregarEmpleado() {
+
 		ArrayList<Empleados> NuevaListaEmpleados = this.getListaEmpleados();
-		
-		
+
 		System.out.println("Introduce nombre");
-		
+
 		String Nombre = leer.nextLine();
-		
+
 		System.out.println("Introduce apellido");
-		
+
 		String Apellidos = leer.nextLine();
-		
+
 		System.out.println("Introduce direccion");
-		
+
 		String Direccion = leer.nextLine();
-		
+
 		System.out.println("Introduce telefono");
-		
+
 		String Telefono = leer.nextLine();
-		
+
 		System.out.println("Introduce dni");
-		
+
 		String DNI = leer.nextLine();
-		
-		
+
 		Empleados empleado = new Empleados(Nombre, Apellidos, Direccion, Telefono, DNI);
 		NuevaListaEmpleados.add(empleado);
-		
-		
+
+	}
+
+	public void imprimirEmpleados() {
+
+		ArrayList<Empleados> NuevaListaEmpleados = this.getListaEmpleados();
+
+		for (Empleados aux : NuevaListaEmpleados) {
+			System.out.println("***************************************************");
+			System.out.println("              LISTADO DE EMPLEADOS ");
+			System.out.println("***************************************************");
+			System.out.println(" Hay " + NuevaListaEmpleados.size() + " empleados almacenados.");
+			System.out.println("Nombre del empleado: " + aux.getNombre());
+			System.out.println("Apellidos del empleado: " + aux.getApellidos());
+			System.out.println("DNI del empleado: " + aux.getDNI());
+			System.out.println("Direccion del empleado: " + aux.getDireccion());
+
+		}
+
+	}
+
+	public void EliminarEmpleado() {
+
+		ArrayList<Empleados> EliminarListaEmpleados = this.getListaEmpleados();
+
+		if (EliminarListaEmpleados.isEmpty()) {
+			System.out.println("No hay empleados a eliminar\n");
+		} else {
+
+			for (int i = 0; i < EliminarListaEmpleados.size(); i++) {
+
+				System.out.println("Nombre del empleado: " + EliminarListaEmpleados.get(i).getNombre());
+			}
+			try {
+				System.out.println("Indique el nombre del empleado a eliminar: ");
+				String eliminar = leer.nextLine();
+				leer.nextLine();
+				EliminarListaEmpleados.remove(eliminar);
+
+			} catch (Exception e) {
+				System.out.println("El empleado no se encuentra en la lista\n");
+			}
+		}
+
 	}
 
 }

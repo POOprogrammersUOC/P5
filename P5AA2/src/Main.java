@@ -66,13 +66,12 @@ public class Main {
 
 			case "1":
 				ong.AgregarEmpleado();
-
 				break;
 			case "2":
-
+				ong.EliminarEmpleado();
 				break;
 			case "3":
-
+				ong.imprimirEmpleados();
 				break;
 			case "4":
 				ong.addsocios();
