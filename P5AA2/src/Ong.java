@@ -453,7 +453,7 @@ public class Ong {
 			try {
 				System.out.println("Indique el nombre del empleado a eliminar: ");
 				String eliminar = leer.nextLine();
-				leer.nextLine();
+				
 				EliminarListaEmpleados.remove(eliminar);
 
 			} catch (Exception e) {
