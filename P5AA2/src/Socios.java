@@ -22,6 +22,7 @@ public class Socios {
 		Telefono = telefono;
 	}
 
+	
 	/**
 	 * @return Devuelve Nombre del socio
 	 */

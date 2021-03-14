@@ -7,6 +7,8 @@ public class Main {
 		// TODO Esbozo de método generado automáticamente
 		String menu;
 		
+		Ong ong = new Ong();
+		
 		
 			System.out.println("*****************************************");
 			System.out.println("   Bienvenidos a la gestión de la ONG");
@@ -37,7 +39,12 @@ public class Main {
 		}
 	public static void subMenuAdministrador() {
 		
+		Ong ong = new Ong();
 		String menu;
+		do {
+			
+			
+		
 		System.out.println("*****************************************");
 		System.out.println("     Accediendo como Administrador");
 		System.out.println("*****************************************");
@@ -65,13 +72,13 @@ public class Main {
 			
 			break;
 		case "4":
-			
+		ong.addsocios();	
 			break;
 		case "5":
 			
 			break;
 		case "6":
-			
+		ong.ImprimirSocios();
 			break;
 		case "7":
 			
@@ -85,7 +92,10 @@ public class Main {
 		case "10":
 			main(null);
 			break;
+				 
 		}
+			 } while(menu!="10");
+			 		
 		
 	}
 	
