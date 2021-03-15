@@ -31,7 +31,7 @@ public class Ong {
 		ListaProyectos = new ArrayList<>();
 	}
 
-	/*
+	/**
 	 * @return Devuelve el nombre
 	 */
 	public String getNombre() {
@@ -242,8 +242,6 @@ public class Ong {
 
 	}
 
-	static Scanner Leer = new Scanner(System.in);
-
 	/**
 	 * Función añadir proyecto
 	 * 
@@ -262,17 +260,17 @@ public class Ong {
 
 			System.out.println("Introduzca el Pais: "); // Pedimos los datos de todos los atributos de la clase
 														// proyectos
-			String Pais = Leer.nextLine();
+			String Pais = leer.nextLine();
 			System.out.println("Introduzca la Localización: ");
-			String Localizacion = Leer.nextLine();
+			String Localizacion = leer.nextLine();
 			System.out.println("Introduzca la línea de acción: ");
-			String LineaDeAccion = Leer.nextLine();
+			String LineaDeAccion = leer.nextLine();
 			System.out.println("Introduzca la sub línea de acción: ");
-			String SublineaDeAccion = Leer.nextLine();
+			String SublineaDeAccion = leer.nextLine();
 			System.out.println("Introduzca la fecha de inicio del proyecto con el formato [YYYY-MM-DD]: ");
-			String FechaInicio = Leer.nextLine();
+			String FechaInicio = leer.nextLine();
 			System.out.println("Introduzca la fecha final del proyecto con el formato [YYYY-MM-DD]: ");
-			String FechaFinal = Leer.nextLine();
+			String FechaFinal = leer.nextLine();
 			LocalDate fInicio = LocalDate.parse(FechaInicio); // parseamos la fecha
 			LocalDate fFinal = LocalDate.parse(FechaFinal);
 
@@ -281,28 +279,28 @@ public class Ong {
 				System.out.println( // Nunca podrá ser 2021-03-15 de inicio y la fecha final 2021-02-15
 						"La fecha no se valida o no se ha introducido correctamente, use el método [YYYY-MM-DD] ");
 				System.out.println("Introduzca la fecha de inicio del proyecto: ");
-				FechaInicio = Leer.nextLine();
+				FechaInicio = leer.nextLine();
 				System.out.println("Introduzca la fecha final del proyecto: ");
-				FechaFinal = Leer.nextLine();
+				FechaFinal = leer.nextLine();
 				fInicio = LocalDate.parse(FechaInicio);
 				fFinal = LocalDate.parse(FechaFinal);
 			}
 
 			System.out.println("Introduzca el Socio local: ");
-			String SocioLocal = Leer.nextLine();
+			String SocioLocal = leer.nextLine();
 			System.out.println("Indique el financiador: ");
-			String Financiador = Leer.nextLine();
+			String Financiador = leer.nextLine();
 			System.out.println("Cantidad a financiar: ");
-			Double Financiacion = Leer.nextDouble();
-			Leer.nextLine();
+			Double Financiacion = leer.nextDouble();
+			leer.nextLine();
 			System.out.println("Acciones: ");
-			String Acciones = Leer.nextLine();
+			String Acciones = leer.nextLine();
 			System.out.println("Indicar Nº de personas del proyecto: ");
-			int Personal = Leer.nextInt();
-			Leer.nextLine(); // Estamos obligados a ponerla para que no interprete un valor
+			int Personal = leer.nextInt();
+			leer.nextLine(); // Estamos obligados a ponerla para que no interprete un valor
 			System.out.println("Indicar Nº de personal voluntario: ");
-			int VoluntariosAsignados = Leer.nextInt();
-			Leer.nextLine();
+			int VoluntariosAsignados = leer.nextInt();
+			leer.nextLine();
 
 			Proyectos proyecto = new Proyectos(Pais, Localizacion, LineaDeAccion, SublineaDeAccion, fInicio, fFinal, // finalmente
 																														// creamos
@@ -380,8 +378,8 @@ public class Ong {
 			}
 			try {
 				System.out.println("¿Que proyecto quiere eliminar? Indique el número: ");
-				int eliminar = Leer.nextInt();
-				Leer.nextLine();
+				int eliminar = leer.nextInt();
+				leer.nextLine();
 				EliminarListaProyectos.remove(eliminar - 1); // Hay que ponerle un try catch IndexOutOfBoundsException
 																// fuera de indice
 			} catch (Exception e) {
@@ -453,7 +451,7 @@ public class Ong {
 			try {
 				System.out.println("Indique el nombre del empleado a eliminar: ");
 				String eliminar = leer.nextLine();
-				
+
 				EliminarListaEmpleados.remove(eliminar);
 
 			} catch (Exception e) {

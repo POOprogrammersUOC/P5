@@ -8,8 +8,6 @@ public class Main {
 		// TODO Esbozo de método generado automáticamente
 		String menu;
 
-		Ong ong = new Ong();
-
 		System.out.println("*****************************************");
 		System.out.println("   Bienvenidos a la gestión de la ONG");
 		System.out.println("*****************************************");
