@@ -77,7 +77,7 @@ public class Main {
 				ong.addsocios();
 				break;
 			case "5":
-
+				ong.EliminarSocio();
 				break;
 			case "6":
 				ong.ImprimirSocios();

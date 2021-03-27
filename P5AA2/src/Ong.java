@@ -217,7 +217,7 @@ public class Ong {
 
 		if (NuevaListaSocios.isEmpty()) {
 
-			System.out.println("No hay proyectos creados\n");
+			System.out.println("No hay socios creados\n");
 
 		} else {
 
@@ -238,9 +238,31 @@ public class Ong {
 
 	public void EliminarSocio() {
 
-		ArrayList<Socios> NuevaListaSocios = this.getListaSocios(); UNION PRUEBA!
+		ArrayList<Socios> EliminarListaSocios = this.getListaSocios();
+		
+		
+	if (EliminarListaSocios.isEmpty()) {
+		System.out.println("No hay lista de socios a eliminar\n");
+	} else {
 
+		for (int i = 0; i < EliminarListaSocios.size(); i++) {
+
+			System.out.println("Número de socio: " + EliminarListaSocios.get(i).getnSocio());
+		}
+		try {
+			System.out.println("¿Que socio quiere eliminar? Indique el número: ");
+			int eliminar = Leer.nextInt();
+			Leer.nextLine();
+			EliminarListaSocios.remove(eliminar - 1); // Hay que ponerle un try catch IndexOutOfBoundsException
+															// fuera de indice
+		} catch (Exception e) {
+			System.out.println("El valor introducido no se encuentra en la lista\n");
+		}
 	}
+	}
+
+
+	
 
 	static Scanner Leer = new Scanner(System.in);
 
@@ -392,3 +414,6 @@ public class Ong {
 	}
 
 }
+
+
+		
